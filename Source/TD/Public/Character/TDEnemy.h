@@ -16,6 +16,10 @@ class TD_API ATDEnemy : public ATDCharacterBase, public IEnemyInterface
 	GENERATED_BODY()
 	
 public:
+		
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bHighlighted = false;
 };

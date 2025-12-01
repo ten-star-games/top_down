@@ -5,8 +5,10 @@
 
 void ATDEnemy::HighlightActor()
 {
+	bHighlighted = true;
 }
 
 void ATDEnemy::UnHighlightActor()
 {
+	bHighlighted = false;
 }
