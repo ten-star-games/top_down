@@ -13,5 +13,6 @@ UCLASS()
 class TD_API ATDCharacter : public ATDCharacterBase
 {
 	GENERATED_BODY()
-	
+public:
+	ATDCharacter();
 };
