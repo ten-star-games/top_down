@@ -3,3 +3,10 @@
 
 #include "Character/TDEnemy.h"
 
+void ATDEnemy::HighlightActor()
+{
+}
+
+void ATDEnemy::UnHighlightActor()
+{
+}

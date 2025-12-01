@@ -4,14 +4,18 @@
 
 #include "CoreMinimal.h"
 #include "Character/TDCharacterBase.h"
+#include "Interaction/EnemyInterface.h"
 #include "TDEnemy.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class TD_API ATDEnemy : public ATDCharacterBase
+class TD_API ATDEnemy : public ATDCharacterBase, public IEnemyInterface
 {
 	GENERATED_BODY()
 	
+public:
+	virtual void HighlightActor() override;
+	virtual void UnHighlightActor() override;
 };
