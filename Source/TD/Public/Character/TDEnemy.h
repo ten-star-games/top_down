@@ -14,12 +14,12 @@ UCLASS()
 class TD_API ATDEnemy : public ATDCharacterBase, public IEnemyInterface
 {
 	GENERATED_BODY()
+	ATDEnemy();
 	
 public:
 		
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
 
-	UPROPERTY(BlueprintReadOnly)
-	bool bHighlighted = false;
+
 };
