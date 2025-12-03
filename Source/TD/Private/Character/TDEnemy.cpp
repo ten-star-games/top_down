@@ -2,11 +2,19 @@
 
 
 #include "Character/TDEnemy.h"
+
+#include "AbilitySystem/TDAbilitySystemComponent.h"
+#include "AbilitySystem/TDAttributeSet.h"
 #include "TD/TD.h"
 
 ATDEnemy::ATDEnemy()
 {
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
+
+	AbilitySystemComponent = CreateDefaultSubobject<UTDAbilitySystemComponent>("AbilitySystemComponent");
+	AbilitySystemComponent->SetIsReplicated(true);
+
+	AttributeSet = CreateDefaultSubobject<UTDAttributeSet>("AttributeSet");
 }
 
 void ATDEnemy::HighlightActor()
