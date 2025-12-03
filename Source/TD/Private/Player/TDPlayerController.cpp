@@ -50,35 +50,36 @@ void ATDPlayerController::CursorTrace()
 	{
 		if (ThisActor != nullptr)
 		{
-			// Case B
+			// 케이스 B: LastActor는 null이고 ThisActor만 유효 → ThisActor 하이라이트
 			ThisActor->HighlightActor();
 		}
 		else
 		{
-			// Case A - both are null, do nothing
+			// 케이스 A: 둘 다 null → 아무 것도 하지 않음
 		}
 	}
-	else // LastActor is valid
+	else // LastActor는 유효함
 	{
 		if (ThisActor == nullptr)
 		{
-			// Case C
+			// 케이스 C: ThisActor는 null → LastActor 하이라이트 해제
 			LastActor->UnHighlightActor();
 		}
-		else // both actors are valid
+		else // 둘 다 유효함
 		{
 			if (LastActor != ThisActor)
 			{
-				// Case D
+				// 케이스 D: 서로 다른 액터 → LastActor 해제 + ThisActor 하이라이트
 				LastActor->UnHighlightActor();
 				ThisActor->HighlightActor();
 			}
 			else
 			{
-				// Case E - do nothing
+				// 케이스 E: 둘 다 유효하고 같은 액터 → 아무 것도 하지 않음
 			}
 		}
 	}
+
 }
 
 
