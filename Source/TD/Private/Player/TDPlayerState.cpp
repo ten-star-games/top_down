@@ -15,7 +15,9 @@ ATDPlayerState::ATDPlayerState()
 
 	AttributeSet = CreateDefaultSubobject<UTDAttributeSet>("AttributeSet");
 	
-	SetNetUpdateFrequency(100.f); //	NetUpdateFrequency는 ue5.6 이상부터 퇴화
+	SetNetUpdateFrequency(100.f); //	NetUpdateFrequency는 ue5.6 이상부터 폐기
+	
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 }
 
 UAbilitySystemComponent* ATDPlayerState::GetAbilitySystemComponent() const
