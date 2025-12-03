@@ -15,4 +15,8 @@ class TD_API ATDCharacter : public ATDCharacterBase
 	GENERATED_BODY()
 public:
 	ATDCharacter();
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+private:
+	void InitAbilityActorInfo();
 };
