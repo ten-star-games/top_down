@@ -25,7 +25,13 @@ void ATDCharacter::PossessedBy(AController* NewController)
 	Super::PossessedBy(NewController);
 	
 	// Init ability actor info for the Server
-	InitAbilityActorInfo();
+	// InitAbilityActorInfo(); <- 이전 코드
+	
+	//위 코드 대신 이렇게..
+	if (GetPlayerState<ATDPlayerState>())
+	{
+		InitAbilityActorInfo();
+	}
 }
 
 void ATDCharacter::OnRep_PlayerState()
@@ -33,7 +39,13 @@ void ATDCharacter::OnRep_PlayerState()
 	Super::OnRep_PlayerState();
 	
 	// Init ability actor info for the Client
-	InitAbilityActorInfo();
+	//InitAbilityActorInfo();
+	
+	if (GetPlayerState<ATDPlayerState>())
+	{
+		InitAbilityActorInfo();
+	}
+	
 }
 
 void ATDCharacter::InitAbilityActorInfo()
